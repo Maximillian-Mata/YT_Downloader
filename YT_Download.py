@@ -17,7 +17,7 @@ st.title('YouTube Downloader')
 Audio_Path = "./Downloaded_Audio"
 Video_Path = "./Downloaded_Video"
 files_to_download = {}
-
+Master_Password = "1OE.unlv$24"
 
 # Custom Functions
 
@@ -209,20 +209,24 @@ def download_youtube_playlist(video_url, capt):
 def main():
     submitted=False
     want_capt = False
-    
-    with st.form("Input Form"):
-        want_capt = st.toggle(label="Generate Captions?")
-        url = st.text_input(label="URL input", value="")
-        submitted = st.form_submit_button("Submit")
-    if(submitted):
-        try:
-            if is_playlist(url):
-                st.write("This is a playlist")
-                download_youtube_playlist(url, want_capt)
-            else:
-                download_youtube_video(url, want_capt)
-        except Exception as e:
-            st.write(f"An error occurred:{e}")
+    with st.form("Password Input"):
+        entered_password = st.text_input(label = "Password:", value="")
+    if entered_password == Master_Password:
+        with st.form("Input Form"):
+            want_capt = st.toggle(label="Generate Captions?")
+            url = st.text_input(label="URL input", value="")
+            submitted = st.form_submit_button("Submit")
+        if(submitted):
+            try:
+                if is_playlist(url):
+                    st.write("This is a playlist")
+                    download_youtube_playlist(url, want_capt)
+                else:
+                    download_youtube_video(url, want_capt)
+            except Exception as e:
+                st.write(f"An error occurred:{e}")
+    else:
+        st.write("Incorrect Password")
 
     
     
