@@ -9,7 +9,7 @@ from youtube_transcript_api import YouTubeTranscriptApi # type: ignore
 from youtube_transcript_api.formatters import SRTFormatter # type: ignore
 
 
-st.title('YouTube Downloader')
+st.title('OE Video Tool')
 # Your script logic here
 
 # Global Variables
