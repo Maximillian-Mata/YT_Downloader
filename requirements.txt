@@ -1,6 +1,6 @@
 streamlit 
 pytube 
-ffmpeg 
+ffmpeg-python 
 #os
 #zipfile
 #io
