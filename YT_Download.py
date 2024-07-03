@@ -213,7 +213,7 @@ def main():
     with st.form("Password Input"):
         entered_password = st.text_input(label = "Password:", value="", type="password")
         submitted_password = st.form_submit_button("Submit")
-    if entered_password == Master_Password and submitted_password:
+    if entered_password == st.secrets["Master_Password"] and submitted_password:
         with st.form("Input Form"):
             want_capt = st.toggle(label="Generate Captions?")
             url = st.text_input(label="URL input", value="")
