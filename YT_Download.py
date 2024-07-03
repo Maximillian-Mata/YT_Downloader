@@ -209,9 +209,11 @@ def download_youtube_playlist(video_url, capt):
 def main():
     submitted=False
     want_capt = False
+    submitted_password = False
     with st.form("Password Input"):
         entered_password = st.text_input(label = "Password:", value="")
-    if entered_password == Master_Password:
+        submitted_password = st.form_submit_button("Submit")
+    if entered_password == Master_Password and submitted_password:
         with st.form("Input Form"):
             want_capt = st.toggle(label="Generate Captions?")
             url = st.text_input(label="URL input", value="")
