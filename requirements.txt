@@ -2,8 +2,8 @@ streamlit
 pytube 
 ffmpeg 
 #os
-zipfile
+#zipfile
 io
-shutil
+#shutil
 youtube_transcript_api 
 youtube_transcript_api.formatters
