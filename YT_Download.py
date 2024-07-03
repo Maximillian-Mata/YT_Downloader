@@ -214,9 +214,10 @@ def main():
         entered_password = st.text_input(label = "Password:", value="", type="password")
         submitted_password = st.form_submit_button("Submit")
     if (entered_password == st.secrets["Master_Password"] or entered_password in st.secrets["Pws"]) and submitted_password:
-        chosen_index = st.secrets["Pws"].index(entered_password)
-        user_name = st.secrets["Approved_users"][chosen_index]
-        st.write(f"Welcome {user_name}")
+        if entered_password in st.secrets["Pws"]:
+            chosen_index = st.secrets["Pws"].index(entered_password)
+            user_name = st.secrets["Approved_users"][chosen_index]
+            st.write(f"Welcome {user_name}")
         with st.form("Input Form"):
             want_capt = st.toggle(label="Generate Captions?")
             url = st.text_input(label="URL input", value="")
