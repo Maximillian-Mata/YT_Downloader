@@ -3,7 +3,7 @@ pytube
 ffmpeg 
 #os
 #zipfile
-io
+#io
 #shutil
 youtube_transcript_api 
 youtube_transcript_api.formatters
