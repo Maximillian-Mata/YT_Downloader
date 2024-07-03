@@ -22,7 +22,7 @@ files_to_download = {}
 # Custom Functions
 
 def clean(title):
-    trans_table = str.maketrans('','',":'")
+    trans_table = str.maketrans('','',":'|")
     cleaned_string = title.translate(trans_table)
     return cleaned_string
 
