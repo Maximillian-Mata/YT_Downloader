@@ -1,0 +1,9 @@
+streamlit 
+pytube 
+ffmpeg 
+os
+zipfile
+io
+shutil
+youtube_transcript_api 
+youtube_transcript_api.formatters
