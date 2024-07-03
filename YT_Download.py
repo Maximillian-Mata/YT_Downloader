@@ -210,9 +210,6 @@ def main():
     submitted=False
     want_capt = False
     submitted_password = False
-    with st.form("Password Input"):
-        entered_password = st.text_input(label = "Password:", value="", type="password")
-        submitted_password = st.form_submit_button("Submit")
     if (entered_password == st.secrets["Master_Password"] or entered_password in st.secrets["Pws"]) and submitted_password:
         if entered_password in st.secrets["Pws"]:
             chosen_index = st.secrets["Pws"].index(entered_password)
@@ -232,7 +229,9 @@ def main():
             except Exception as e:
                 st.write(f"An error occurred:{e}")
     else:
-        st.write("Incorrect Password")
+        with st.form("Password Input"):
+            entered_password = st.text_input(label = "Password:", value="", type="password")
+            submitted_password = st.form_submit_button("Submit")
 
     
     
