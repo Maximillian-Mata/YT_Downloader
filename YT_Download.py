@@ -218,19 +218,19 @@ def main():
             chosen_index = st.secrets["Pws"].index(entered_password)
             user_name = st.secrets["Approved_users"][chosen_index]
             st.write(f"Welcome {user_name}")
-            with st.form("Input Form"):
-                want_capt = st.toggle(label="Generate Captions?")
-                url = st.text_input(label="URL input", value="")
-                submitted = st.form_submit_button("Submit")
-            if(submitted):
-                try:
-                    if is_playlist(url):
-                        st.write("This is a playlist")
-                        download_youtube_playlist(url, want_capt)
-                    else:
-                        download_youtube_video(url, want_capt)
-                except Exception as e:
-                    st.write(f"An error occurred:{e}")
+        with st.form("Input Form"):
+            want_capt = st.toggle(label="Generate Captions?")
+            url = st.text_input(label="URL input", value="")
+            submitted = st.form_submit_button("Submit")
+        if(submitted):
+            try:
+                if is_playlist(url):
+                    st.write("This is a playlist")
+                    download_youtube_playlist(url, want_capt)
+                else:
+                    download_youtube_video(url, want_capt)
+            except Exception as e:
+                st.write(f"An error occurred:{e}")
     else:
         st.write("Incorrect Password")
 
