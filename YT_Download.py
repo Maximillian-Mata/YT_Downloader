@@ -232,7 +232,8 @@ def main():
             except Exception as e:
                 st.write(f"An error occurred:{e}")
     else:
-        st.write("Incorrect Password")
+        if submitted_password:
+            st.write("Incorrect Password")
 
     
     
