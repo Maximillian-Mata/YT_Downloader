@@ -210,6 +210,7 @@ def main():
     submitted=False
     want_capt = False
     submitted_password = False
+    entered_password = ""
     if (entered_password == st.secrets["Master_Password"] or entered_password in st.secrets["Pws"]) and submitted_password:
         if entered_password in st.secrets["Pws"]:
             chosen_index = st.secrets["Pws"].index(entered_password)
