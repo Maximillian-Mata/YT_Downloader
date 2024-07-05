@@ -193,7 +193,7 @@ def download_youtube_playlist(video_url, capt):
             for file_name, file_path in files_to_download.items():
                 zip_file.write(file_path, arcname=file_name)
         zip_buffer.seek(0)
-        st.download_button(label="Download Zip",data = zip_buffer, file_name=pl.title+'.zip', mime='application/zip')
+        st.download_button(label="Download Zip",data = zip_buffer, file_name=clean(pl.title)+'.zip', mime='application/zip')
         # Clearing Server Memory
         if os.path.exists(Audio_Path):
             shutil.rmtree(Audio_Path)
