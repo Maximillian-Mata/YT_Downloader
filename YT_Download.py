@@ -1,5 +1,5 @@
 import streamlit as st # type: ignore
-from pytube import YouTube, Playlist
+from pytubefix import YouTube, Playlist
 import ffmpeg 
 import os
 import zipfile
