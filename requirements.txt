@@ -1,4 +1,4 @@
 streamlit 
-pytube 
+pytubefix 
 ffmpeg-python 
 youtube_transcript_api 
